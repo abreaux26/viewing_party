@@ -18,6 +18,3 @@
 
 # Ignore test coverage
 /coverage/*
-
-# Ignore Gemfile.lock
-Gemfile.lock
