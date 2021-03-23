@@ -6,7 +6,7 @@ Neccesary checkmarks:
 
     [] The code will run locally
 
-    [] Ran RuboCop
+    [] Ran RuboCop `bundle exec rubocop --safe-auto-correct`
 
 Type of change
 
