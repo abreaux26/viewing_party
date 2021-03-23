@@ -6,6 +6,8 @@ Neccesary checkmarks:
 
     [] The code will run locally
 
+    [] Ran RuboCop
+
 Type of change
 
     [] New feature
