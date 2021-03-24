@@ -28,10 +28,10 @@ RSpec.describe 'When a user visits the root path' do
     expect(page).to have_button("Log In")
   end
 
-  it 'I see a link to registration' do
-    expect(page).to have_link("Registration")
+  it 'I see a link to register' do
+    expect(page).to have_link("New to Viewing Party? Register Here")
 
-    click_link("Registration")
+    click_link("New to Viewing Party? Register Here")
     expect(current_path).to eq(new_user_path)
   end
 

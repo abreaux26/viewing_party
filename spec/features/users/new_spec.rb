@@ -7,6 +7,18 @@ RSpec.describe 'As a user' do
   end
 
   describe 'When a user visits the "/registration" path' do
+    it 'I see a welcome message' do
+      welcome_message = "Welcome to Viewing Party!"
+
+      expect(page).to have_content(welcome_message)
+    end
+
+    it 'I see a description to register for an account' do
+      description = "Please Register for an Account"
+
+      expect(page).to have_content(description)
+    end
+
     it 'I see username field' do
       expect(page).to have_field('Username')
     end
@@ -25,6 +37,13 @@ RSpec.describe 'As a user' do
 
     it 'I see registration button' do
       expect(page).to have_button('Register')
+    end
+
+    it 'I see a link to log in' do
+      expect(page).to have_link("Already Registered? Log in Here")
+
+      click_link("Already Registered? Log in Here")
+      expect(current_path).to eq(root_path)
     end
 
     it 'I am redirected to the users dashboard page after I register successfully' do
