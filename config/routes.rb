@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   post '/', to: 'welcome#login'
-  resources :users, only: [:new, :create]
+  get '/registration', to: 'sessions#new'
+  post '/registration', to: 'sessions#create'
+
   get '/dashboard', to: 'users#dashboard', as: 'dashboard'
   get '/discover', to: 'movies#discover', as: 'discover'
 end
