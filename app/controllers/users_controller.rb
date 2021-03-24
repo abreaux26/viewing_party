@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def dashboard
+    @user = current_user
   end
 
   def new
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
       redirect_to dashboard_path
     else
       flash[:error] = new_user.errors.full_messages.to_sentence
+      render :new
     end
   end
 
