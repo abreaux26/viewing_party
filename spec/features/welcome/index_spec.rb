@@ -32,7 +32,7 @@ RSpec.describe 'When a user visits the root path' do
     expect(page).to have_link("New to Viewing Party? Register Here")
 
     click_link("New to Viewing Party? Register Here")
-    expect(current_path).to eq(new_user_path)
+    expect(current_path).to eq(registration_path)
   end
 
   it 'I am taken to my dashboard after a successful login' do

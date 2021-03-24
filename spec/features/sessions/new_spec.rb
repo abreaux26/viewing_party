@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe 'As a user' do
   before :each do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(User.new)
-    visit new_user_path
+    visit registration_path
   end
 
   describe 'When a user visits the "/registration" path' do
@@ -86,14 +86,14 @@ RSpec.describe 'As a user' do
       expect(page).to have_content("Password can't be blank")
     end
 
-    xit 'I see an error for an unsuccessful registration without password confirmation' do
+    it 'I see an error for an unsuccessful registration without password confirmation' do
       fill_in 'user[username]', with: 'user1'
       fill_in 'user[email]', with: 'user1@email.com'
       fill_in 'user[password]', with: 'password'
 
       click_button('Register')
 
-      expect(page).to have_content("Password Confirmation can't be blank")
+      expect(page).to have_content("Password confirmation required")
     end
 
     it 'I see an error for an unsuccessful registration without any fields filled in' do
