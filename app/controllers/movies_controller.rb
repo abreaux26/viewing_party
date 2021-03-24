@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
 
-  def dashboard
+  def discovery
   end
 end
