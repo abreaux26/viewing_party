@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "relationships" do
-    it { should have_many :outgoing_friend_requests}
-    it { should have_many :incoming_friend_requests}
+    it { should have_many :user_friends}
+    it { should have_many(:friends).through(:user_friends)}
     it { should have_many :events}
   end
 
