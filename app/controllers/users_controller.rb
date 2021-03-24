@@ -1,5 +1,3 @@
 class UsersController < ApplicationController
-  
-  def dashboard
-  end
+  def dashboard; end
 end

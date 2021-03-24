@@ -1,7 +1,7 @@
 class UserFriend < ApplicationRecord
   belongs_to :sender, class_name: 'User'
   belongs_to :receiver, class_name: 'User'
-  enum status: [:pending, :accepted]
+  enum status: { pending: 0, accepted: 1 }
 
-  validates_presence_of :status
+  validates :status, presence: true
 end
