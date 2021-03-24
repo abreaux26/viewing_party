@@ -1,0 +1,8 @@
+<h1>Welcome to Viewing Party!</h1>
+<h3>Watch scheduled movies with friends!</h3>
+<%= form_with url: root_path, method: :post, local: true do |form| %>
+  <%= form.email_field :email, placeholder: "Email" %>
+  <%= form.password_field :password, placeholder: "Password" %>
+  <%= form.submit "Log In" %>
+<% end %>
+<%= link_to "Registration", new_registration_path %>
