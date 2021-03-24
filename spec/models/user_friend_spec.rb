@@ -5,4 +5,7 @@ RSpec.describe UserFriend, type: :model do
     it { should belong_to :sender }
     it { should belong_to :receiver }
   end
+  describe "validations" do
+    it { should validate_presence_of :status }
+  end
 end
