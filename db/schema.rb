@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_23_231212) do
+ActiveRecord::Schema.define(version: 2021_03_24_204118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,13 @@ ActiveRecord::Schema.define(version: 2021_03_23_231212) do
   end
 
   create_table "user_friends", force: :cascade do |t|
-    t.bigint "sender_id"
-    t.bigint "receiver_id"
+    t.bigint "user_id"
+    t.bigint "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
-    t.index ["receiver_id"], name: "index_user_friends_on_receiver_id"
-    t.index ["sender_id"], name: "index_user_friends_on_sender_id"
+    t.index ["friend_id"], name: "index_user_friends_on_friend_id"
+    t.index ["user_id"], name: "index_user_friends_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,6 +66,6 @@ ActiveRecord::Schema.define(version: 2021_03_23_231212) do
   add_foreign_key "attendees", "users", column: "friend_id"
   add_foreign_key "events", "movies"
   add_foreign_key "events", "users", column: "host_id"
-  add_foreign_key "user_friends", "users", column: "receiver_id"
-  add_foreign_key "user_friends", "users", column: "sender_id"
+  add_foreign_key "user_friends", "users"
+  add_foreign_key "user_friends", "users", column: "friend_id"
 end

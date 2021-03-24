@@ -14,9 +14,7 @@ class SessionsController < ApplicationController
       redirect_to dashboard_path
     else
       flash[:error] = new_user.errors.full_messages.to_sentence
-      if !password_confirmed?
-        flash[:error] += "Password confirmation required"
-      end
+      flash[:error] += 'Password confirmation required' unless password_confirmed?
       render :new
     end
   end

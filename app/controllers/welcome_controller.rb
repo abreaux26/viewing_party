@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
-  def index
-  end
+  def index; end
 
   def login
     user = User.find_by(email: params[:email])
@@ -8,7 +7,7 @@ class WelcomeController < ApplicationController
       session[:user_id] = user.id
       redirect_to dashboard_path
     else
-      flash[:error] = "Invalid Credentials!"
+      flash[:error] = 'Invalid Credentials!'
       render :index
     end
   end

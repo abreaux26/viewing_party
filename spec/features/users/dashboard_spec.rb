@@ -18,7 +18,13 @@ RSpec.describe 'user dashboard page', type: :feature do
     expect(current_path).to eq("/discover")
   end
 
-  it 'has a friends section'
+  it 'has a friends section' do
 
-  it 'has a viewing parties section'
+    expect(page).to have_content("Friends")
+  end
+
+  it 'has a viewing parties section' do
+    
+    expect(page).to have_content("Viewing Parties")
+  end
 end
