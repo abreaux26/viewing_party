@@ -1,7 +1,7 @@
 class UserFriendsController < ApplicationController
   def create
     if params[:friend]
-      friend = User.find_by_email(params[:friend])
+      friend = User.find_by(email: params[:friend])
       if friend.nil?
         flash[:error] = "User doesn't exist."
       else
