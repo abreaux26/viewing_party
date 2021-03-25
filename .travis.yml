@@ -3,6 +3,9 @@ rbenv:
 - 2.5.3
 addons:
   postgresql: 9.6
+before_install:
+- gem install bundler:2.1.4
+- bundle update mimemagic
 script:
 - bundle exec rails db:{create,migrate} RAILS_ENV=test
 - bundle exec rspec
