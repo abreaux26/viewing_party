@@ -18,7 +18,6 @@ class MovieService
  def authorize
    Faraday.new('https://api.themoviedb.org') do |conn|
      conn.authorization :Bearer, 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTAyZGZjNzViMzBkZDkwYTZhYTNmNWMxYThmMjBhMiIsInN1YiI6IjYwNWJlYzI0OTQ0YTU3MDAyOWE2NWFhMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BESdLe_XE56rDoqKxvLa1kE6XwqEdxmgjNBJsgwGc_s'
-     # conn.headers('Authorization: Bearer, eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTAyZGZjNzViMzBkZDkwYTZhYTNmNWMxYThmMjBhMiIsInN1YiI6IjYwNWJlYzI0OTQ0YTU3MDAyOWE2NWFhMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BESdLe_XE56rDoqKxvLa1kE6XwqEdxmgjNBJsgwGc_s')
    end
  end
 end
