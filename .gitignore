@@ -18,4 +18,4 @@
 
 # Ignore test coverage
 /coverage/*
-# /config/local_env.yml
+/config/local_env.yml
