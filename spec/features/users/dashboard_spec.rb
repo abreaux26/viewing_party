@@ -24,7 +24,7 @@ RSpec.describe 'user dashboard page', type: :feature do
   end
 
   it 'has a viewing parties section' do
-    
+
     expect(page).to have_content("Viewing Parties")
   end
 end
