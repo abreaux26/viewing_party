@@ -1,0 +1,11 @@
+<body>
+  <div class="text-center" id="top-40">
+    <%= link_to "Find Top 40 Movies", movies_path(q: "top_rated"), class: "btn btn-dark text-light"%>
+  </div><hr>
+  <div class="jumbotron bg-light center-align shadow bg-white rounded">
+    <%= form_with url: movies_path, method: :get, local: :true do |f| %>
+      <%= f.text_field :q, label: "title_search" %>
+      <%= f.button "Search by Movie Title", name: nil %>
+    <% end %>
+  </div>
+</body>

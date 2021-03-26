@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#dashboard', as: 'dashboard'
   post '/dashboard', to: 'user_friends#create'
   get '/discover', to: 'movies#discover', as: 'discover'
-
+  get '/movies', to: 'movies#search', as: 'movies'
 end
