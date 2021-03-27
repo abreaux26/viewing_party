@@ -1,0 +1,204 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?page=1&query=Phoenix
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer HIDDEN
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 27 Mar 2021 01:08:16 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b7f0c5734a286f56595c1e1b456020a2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - xxy1-qmjk2aTRzCen785kQfm8idTnjMKXyOIO4fjO3XJzElfIAuZDw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcGh4aUtGRHZQZVFqNEFia3ZKTG11WkVpZURVLmpwZyIsImdlbnJlX2lkcyI6Wzg3OCwyOCwxMl0sImlkIjozMjAyODgsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkRhcmsgUGhvZW5peCIsIm92ZXJ2aWV3IjoiVGhlIFgtTWVuIGZhY2UgdGhlaXIgbW9zdCBmb3JtaWRhYmxlIGFuZCBwb3dlcmZ1bCBmb2Ugd2hlbiBvbmUgb2YgdGhlaXIgb3duLCBKZWFuIEdyZXksIHN0YXJ0cyB0byBzcGlyYWwgb3V0IG9mIGNvbnRyb2wuIER1cmluZyBhIHJlc2N1ZSBtaXNzaW9uIGluIG91dGVyIHNwYWNlLCBKZWFuIGlzIG5lYXJseSBraWxsZWQgd2hlbiBzaGUncyBoaXQgYnkgYSBteXN0ZXJpb3VzIGNvc21pYyBmb3JjZS4gT25jZSBzaGUgcmV0dXJucyBob21lLCB0aGlzIGZvcmNlIG5vdCBvbmx5IG1ha2VzIGhlciBpbmZpbml0ZWx5IG1vcmUgcG93ZXJmdWwsIGJ1dCBmYXIgbW9yZSB1bnN0YWJsZS4gVGhlIFgtTWVuIG11c3Qgbm93IGJhbmQgdG9nZXRoZXIgdG8gc2F2ZSBoZXIgc291bCBhbmQgYmF0dGxlIGFsaWVucyB0aGF0IHdhbnQgdG8gdXNlIEdyZXkncyBuZXcgYWJpbGl0aWVzIHRvIHJ1bGUgdGhlIGdhbGF4eS4iLCJwb3B1bGFyaXR5IjoxOTAuMzI4LCJwb3N0ZXJfcGF0aCI6Ii9rWnY5MmVUYzBHZzNtS3hxampEQU03M3o5Y3kuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxOS0wNi0wNSIsInRpdGxlIjoiRGFyayBQaG9lbml4IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjYuMSwidm90ZV9jb3VudCI6NDQwMX0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcGt4UGtIT1BKak92emZRT2NsQU5FQlQ4T2ZLLmpwZyIsImdlbnJlX2lkcyI6WzEyLDE0LDk2NDhdLCJpZCI6Njc1LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJIYXJyeSBQb3R0ZXIgYW5kIHRoZSBPcmRlciBvZiB0aGUgUGhvZW5peCIsIm92ZXJ2aWV3IjoiVGhlIHJlYmVsbGlvbiBiZWdpbnMhIExvcmQgVm9sZGVtb3J0IGhhcyByZXR1cm5lZCwgYnV0IHRoZSBNaW5pc3RyeSBvZiBNYWdpYyBpcyBkb2luZyBldmVyeXRoaW5nIGl0IGNhbiB0byBrZWVwIHRoZSB3aXphcmRpbmcgd29ybGQgZnJvbSBrbm93aW5nIHRoZSB0cnV0aCDigJMgaW5jbHVkaW5nIGFwcG9pbnRpbmcgTWluaXN0cnkgb2ZmaWNpYWwgRG9sb3JlcyBVbWJyaWRnZSBhcyB0aGUgbmV3IERlZmVuY2UgQWdhaW5zdCB0aGUgRGFyayBBcnRzIHByb2Zlc3NvciBhdCBIb2d3YXJ0cy4gV2hlbiBVbWJyaWRnZSByZWZ1c2VzIHRvIHRlYWNoIHByYWN0aWNhbCBkZWZlbnNpdmUgbWFnaWMsIFJvbiBhbmQgSGVybWlvbmUgY29udmluY2UgSGFycnkgdG8gc2VjcmV0bHkgdHJhaW4gYSBzZWxlY3QgZ3JvdXAgb2Ygc3R1ZGVudHMgZm9yIHRoZSB3aXphcmRpbmcgd2FyIHRoYXQgbGllcyBhaGVhZC4gQSB0ZXJyaWZ5aW5nIHNob3dkb3duIGJldHdlZW4gZ29vZCBhbmQgZXZpbCBhd2FpdHMgaW4gdGhpcyBlbnRocmFsbGluZyBmaWxtIHZlcnNpb24gb2YgdGhlIGZpZnRoIG5vdmVsIGluIEouSy4gUm93bGluZ+KAmXMgSGFycnkgUG90dGVyIHNlcmllcy4gUHJlcGFyZSBmb3IgYmF0dGxlISIsInBvcHVsYXJpdHkiOjEwMC42OTMsInBvc3Rlcl9wYXRoIjoiL3M4MzZQUndIa0xqck9KcmZXMGVvN0I0TkpPZi5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDA3LTA2LTI4IiwidGl0bGUiOiJIYXJyeSBQb3R0ZXIgYW5kIHRoZSBPcmRlciBvZiB0aGUgUGhvZW5peCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjcsInZvdGVfY291bnQiOjE0NTc3fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii83T0oyRlVsQ1FLSUxFZlBaWHpxS1dwM21iVUEuanBnIiwiZ2VucmVfaWRzIjpbOTldLCJpZCI6NzI2ODg3LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJSaXNpbmcgUGhvZW5peCIsIm92ZXJ2aWV3IjoiVGhlIGhpc3RvcnkgYW5kIGN1cnJlbnQgc3RhbmRpbmcgb2YgdGhlIFBhcmFseW1waWMgR2FtZXMsIHdoaWNoIGhhcyBncm93biB0byBiZWNvbWUgdGhlIHdvcmxkJ3MgdGhpcmQgbGFyZ2VzdCBzcG9ydGluZyBldmVudC4iLCJwb3B1bGFyaXR5IjoxNy4yNjUsInBvc3Rlcl9wYXRoIjoiL29zbzA5Z0lEMmJGazlxM0NuaThHTk91elRXWi5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDIwLTA4LTI2IiwidGl0bGUiOiJSaXNpbmcgUGhvZW5peCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjIsInZvdGVfY291bnQiOjYxfSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii8zUlhjNnBscW9xWFVGVHNnTWU0MUhCbWw5UHAuanBnIiwiZ2VucmVfaWRzIjpbMjcsOTY0OCw4NzhdLCJpZCI6NDQzMzE5LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJQaG9lbml4IEZvcmdvdHRlbiIsIm92ZXJ2aWV3IjoiMjAgeWVhcnMgYWZ0ZXIgdGhyZWUgdGVlbmFnZXJzIGRpc2FwcGVhcmVkIGluIHRoZSB3YWtlIG9mIG15c3RlcmlvdXMgbGlnaHRzIGFwcGVhcmluZyBhYm92ZSBQaG9lbml4LCBBcml6b25hLCB1bnNlZW4gZm9vdGFnZSBmcm9tIHRoYXQgbmlnaHQgaGFzIGJlZW4gZGlzY292ZXJlZCwgY2hyb25pY2xpbmcgdGhlIGZpbmFsIGhvdXJzIG9mIHRoZWlyIGZhdGVmdWwgZXhwZWRpdGlvbi4iLCJwb3B1bGFyaXR5IjoxMC41MjUsInBvc3Rlcl9wYXRoIjoiL3EwQmJqbVRQU3FGMVFuWnhITmMxR1E0SklIYy5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE3LTA0LTIxIiwidGl0bGUiOiJQaG9lbml4IEZvcmdvdHRlbiIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo1LjksInZvdGVfY291bnQiOjIwMH0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvZ0ZGczVGM25iMUNSb1dRNTdzRUE4MTZiY2UwLmpwZyIsImdlbnJlX2lkcyI6WzE4XSwiaWQiOjI1NDU3OCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJkZSIsIm9yaWdpbmFsX3RpdGxlIjoiUGhvZW5peCIsIm92ZXJ2aWV3IjoiQSBkaXNmaWd1cmVkIGNvbmNlbnRyYXRpb24tY2FtcCBzdXJ2aXZvciwgdW5yZWNvZ25pemFibGUgYWZ0ZXIgZmFjaWFsIHJlY29uc3RydWN0aW9uIHN1cmdlcnksIHNlYXJjaGVzIHJhdmFnZWQgcG9zdHdhciBCZXJsaW4gZm9yIHRoZSBodXNiYW5kIHdobyBtaWdodCBoYXZlIGJldHJheWVkIGhlciB0byB0aGUgTmF6aXMuIiwicG9wdWxhcml0eSI6OS4yOTQsInBvc3Rlcl9wYXRoIjoiL2VFOVp0OFFrNnppYzlIaG5UeWJQT1l4bUR0WS5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE0LTA5LTI1IiwidGl0bGUiOiJQaG9lbml4IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjYuNywidm90ZV9jb3VudCI6MjgwfSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii9rdEpadXFzWWZwQ2hUVnVEZ2s5TkZzaDNRS0IuanBnIiwiZ2VucmVfaWRzIjpbMzUsMTgsMTA3NDldLCJpZCI6MTU1MzQsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkdyaWZmaW4gJiBQaG9lbml4Iiwib3ZlcnZpZXciOiJBIHRlcm1pbmFsbHkgaWxsIG1hbiBmYWxscyBpbiBsb3ZlIHdpdGggYSB3b21hbiB3aG8gaGFzIGEgc2VjcmV0IHRoYXQgdGhyZWF0ZW5zIHRoZWlyIHRpbWUgc3BlbnQgdG9nZXRoZXIuIiwicG9wdWxhcml0eSI6OS45LCJwb3N0ZXJfcGF0aCI6Ii9rTDFKaDJhaFFINjJTTERFVHdEMlRwRGhsalAuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwNi0wOS0xMiIsInRpdGxlIjoiR3JpZmZpbiAmIFBob2VuaXgiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ny4xLCJ2b3RlX2NvdW50IjoxMTV9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL2gwcHh0QVFDR1djQXJiUHhxdWRXNU5ibVVOYy5qcGciLCJnZW5yZV9pZHMiOlsxOCw1Myw4MCwxMDc0OV0sImlkIjoyODA0Nywib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiUGhvZW5peCIsIm92ZXJ2aWV3IjoiR2FtYmxpbmcgZmV2ZXIgLS0gYWxvbmcgd2l0aCBhIGJydXRhbCBib29raWUgLS0gbGVhZHMgdGhyZWUgY3Jvb2tlZCBjb3BzIGludG8gYSBkb3VibGUtZGVhbGluZyBzY2hlbWUgdGhhdCBsYW5kcyB0aGVtIGluIGhvdCB3YXRlciB3YXkgb3ZlciB0aGVpciBoZWFkcy4iLCJwb3B1bGFyaXR5Ijo2LjI4MywicG9zdGVyX3BhdGgiOiIvdGtwcFJteDRpQnZBZUtsb3BmTlRPOGhuS3hLLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjE5OTgtMDktMDQiLCJ0aXRsZSI6IlBob2VuaXgiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6NS4xLCJ2b3RlX2NvdW50IjozNH0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbmR4NUtDSlo2WDNOVjlxZzVGVno2b2JKaDgzLmpwZyIsImdlbnJlX2lkcyI6WzI3LDUzLDg3OF0sImlkIjozMjEwMzksIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlRoZSBQaG9lbml4IEluY2lkZW50Iiwib3ZlcnZpZXciOiJBIG51bWJlciBvZiAnbWlzc2luZyBwZXJzb24nIGNhc2VzIGFyZSByZXBvcnRlZCBpbiBQaG9lbml4LCBBcml6b25hIHdoZW4gYW4gdW5leHBsYWluZWQgbGlnaHQgYXBwZWFycyBpbiB0aGUgc2t5IG9uZSBuaWdodCBpbiAxOTk3LiIsInBvcHVsYXJpdHkiOjkuOTE4LCJwb3N0ZXJfcGF0aCI6Ii8yRVdVZVVPNEl5aUt3bFgxNFhMVWlDUk1VTmEuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxNS0wNi0xNiIsInRpdGxlIjoiVGhlIFBob2VuaXggSW5jaWRlbnQiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6NS4xLCJ2b3RlX2NvdW50Ijo0MX0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbVdYVTI5UWpmakVHMzdkMGMyaEUxMU1XUkdxLmpwZyIsImdlbnJlX2lkcyI6WzI4LDEyLDE4LDUzXSwiaWQiOjExODY2LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJGbGlnaHQgb2YgdGhlIFBob2VuaXgiLCJvdmVydmlldyI6IldoZW4gYW4gb2lsIHJpZyBpbiB0aGUgR29iaSBEZXNlcnQgb2YgTW9uZ29saWEgcHJvdmVzIHVucHJvZHVjdGl2ZSwgYW4gYWlyY3JhZnQgY3JldyBhcmUgc2VudCB0byBzaHV0IHRoZSBvcGVyYXRpb24gZG93bi4gSG93ZXZlciwgb24gdGhlaXIgd2F5IHRvIEJlaWppbmcsIGEgbWFqb3IgZHVzdCBzdG9ybSBmb3JjZXMgdGhlbSB0byBjcmFzaCB0aGVpciBDLTExOSBGbHlpbmcgQm94Y2FyIGluIGFuIHVuY2hhcnRlZCBhcmVhIG9mIHRoZSBkZXNlcnQuIiwicG9wdWxhcml0eSI6MTUuNjkzLCJwb3N0ZXJfcGF0aCI6Ii9wY2o2dW5Nc0tDdzBvZ1dGbFVYbWJjOWdLYXAuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwNC0xMi0xNyIsInRpdGxlIjoiRmxpZ2h0IG9mIHRoZSBQaG9lbml4IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjUuOSwidm90ZV9jb3VudCI6NTg5fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6bnVsbCwiZ2VucmVfaWRzIjpbXSwiaWQiOjE2Njg2OCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiQ29kZSBOYW1lOiBQaG9lbml4Iiwib3ZlcnZpZXciOiJBIEhvbmcgS29uZyBtYXJ0aWFsIGFydGlzdCBqb2lucyBmb3JjZXMgd2l0aCBhIFUuUy4gbWFyc2hhbCBpbiAyMDIwIHRvIHN0b3AgdGhlIHJlbGVhc2Ugb2YgYSB2aXJ1cyB0aGF0IGhhbHRzIHRoZSBhZ2luZyBwcm9jZXNzLiIsInBvcHVsYXJpdHkiOjYuNzIyLCJwb3N0ZXJfcGF0aCI6Ii81NXI1RXpqcWR2VUJwRUNRenlIRlJRa2U0Q1EuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwMC0wMy0wMiIsInRpdGxlIjoiQ29kZSBOYW1lOiBQaG9lbml4IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjQsInZvdGVfY291bnQiOjF9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiLzJ3RWsxTVdEUUEyNVBkcVVsRzdPVmJ4OHNqVC5qcGciLCJnZW5yZV9pZHMiOltdLCJpZCI6MTA5OTI4LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJQaG9lbml4Iiwib3ZlcnZpZXciOiJJbnNwaXJlZCBieSBNaWNoZWxhbmdlbG8gQW50b25pb25pJ3MgMTk2MSBjbGFzc2ljIEwnQXZ2ZW50dXJhLCBNaWNoYWVsIEFrZXJzJyBcIlBIT0VOSVhcIiBpcyBpbmZ1c2VkIHdpdGggc3ltYm9saXNtIGFuZCBhIHNleHkgc3BhcmsuIER5bGFuIFdlbGxzIChDaGFkIEVkd2FyZCBCYXJ0bGV5KSBoYXMgYSBnb29kIGpvYiwgYSBncmVhdCBhcGFydG1lbnQgYW5kIGFuIGV4Y2l0aW5nIHJlbGF0aW9uc2hpcCB3aXRoIEtlbiBTcGFya3MgKEdhZXRhbm8gSm9uZXMsIEJveXN0b3duKSwgaGlzIHNleHkgd2VsbCB0cmF2ZWxlZCBib3lmcmllbmQgd2hvIGp1c3QgbWlnaHQgYmUgXCJ0aGUgb25lLlwiIEEgZ3JlYXQgbGlmZSwgb3Igc28gaGUgYmVsaWV2ZXMsIHVudGlsIEtlbidzIHZpc2l0IGZvciBEeWxhbidzIDIzcmQgYmlydGhkYXkgcGFydHkgaXMgdW5leHBlY3RlZGx5IGN1dCBzaG9ydCB3aGVuIEtlbiBpcyBzdWRkZW5seSBjYWxsZWQgYXdheSB0byB0ZW5kIHRvIGEgZmFpbGluZyByZWFsIGVzdGF0ZSBkZWFsLCBhbmQgdGhlbiBkaXNhcHBlYXJzLiIsInBvcHVsYXJpdHkiOjIuODQ1LCJwb3N0ZXJfcGF0aCI6Ii85eGJUdnBta1FFWlpDSjdKU0I1WlpiQVRyRFUuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwNi0wMS0zMCIsInRpdGxlIjoiUGhvZW5peCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo1LjYsInZvdGVfY291bnQiOjh9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL2VQaDVUdGJXbjRRSE5Xemg0d3E1Z0I4Yjg1ZS5qcGciLCJnZW5yZV9pZHMiOls4NzgsMThdLCJpZCI6MzEyMTMxLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJUaGUgUGhvZW5peCBQcm9qZWN0Iiwib3ZlcnZpZXciOiJGb3VyIHNjaWVudGlzdHMgY3JhZnQgYSBtYWNoaW5lIHRvIHJlYW5pbWF0ZSBkZWNlYXNlZCBvcmdhbmlzbXMuIiwicG9wdWxhcml0eSI6Ny4xNzYsInBvc3Rlcl9wYXRoIjoiLzIzVDQ0eWYySjhPWUJ0NHRET2E3cjF4djdORy5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE1LTAxLTE2IiwidGl0bGUiOiJUaGUgUGhvZW5peCBQcm9qZWN0IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjQuMiwidm90ZV9jb3VudCI6MTh9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL3IxU0tvSnd5dnZVVEw4MHZrRVAwTDRrSm1YSC5qcGciLCJnZW5yZV9pZHMiOlsyOCwxNCw4NzhdLCJpZCI6MjY0NDAsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlBob2VuaXggdGhlIFdhcnJpb3IiLCJvdmVydmlldyI6IkJpZyBoYWlyLCBiaWcgZ3VucywgYmlnIHBlcnNvbmFsaXRpZXMsIGFuZCBhIHNlcmlvdXMgbGFjayBvZiB3YXJkcm9iZS4gU2hlLVdvbHZlcyBvZiB0aGUgV2FzdGVsYW5kLCBhIHBvc3QtYXBvY2FseXB0aWMgc3RvcnkgdGhhdCBmZWF0dXJlcyB3b21lbi0tbG90cyBhbmQgbG90cyBvZiB3b21lbi0td2hvIGxlYXZlIGxpdHRsZSB0byB0aGUgaW1hZ2luYXRpb24gYXMgdGhleSBiYXR0bGUgZWFjaCBvdGhlciBpbiB2YXJpb3VzIGp1bmt5YXJkcyBhbmQgZ3JhdmVsIHBpdHMgdG8gZGV0ZXJtaW5lIHRoZSBmYXRlIG9mIHRoZSBlbnRpcmUgd29ybGQuIiwicG9wdWxhcml0eSI6NC44NTksInBvc3Rlcl9wYXRoIjoiL28xSUZGT01NMTR6WlBJT1RGWVRJazZKaG9WcS5qcGciLCJyZWxlYXNlX2RhdGUiOiIxOTg4LTEwLTMxIiwidGl0bGUiOiJQaG9lbml4IHRoZSBXYXJyaW9yIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjMuNCwidm90ZV9jb3VudCI6MTB9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL2FHdGhFZUtKa0E3U1ljdENWZThESXp4aGpFcC5qcGciLCJnZW5yZV9pZHMiOlszNV0sImlkIjo1ODIyNDYsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlBob2VuaXgsIE9yZWdvbiIsIm92ZXJ2aWV3IjoiRGVmeWluZyB0aGUgaGF6ZSBvZiBtaWQtbGlmZSwgdHdvIGZyaWVuZHMgc2VpemUgYW4gdW5saWtlbHkgb3Bwb3J0dW5pdHkgdG8gcmVpbnZlbnQgdGhlaXIgbGl2ZXMsIHF1aXR0aW5nIHRoZWlyIGpvYnMgdG8gcmVzdG9yZSBhbiBvbGQgYm93bGluZyBhbGxleSBhbmQgc2VydmUgdGhlIFwid29ybGTigJlzIGdyZWF0ZXN0IHBpenphLlwiIiwicG9wdWxhcml0eSI6Mi4yOTMsInBvc3Rlcl9wYXRoIjoiL3dpd1VmSXdMMTBra3ZOUEx5S1lhamxFWTEzNy5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE5LTA0LTExIiwidGl0bGUiOiJQaG9lbml4LCBPcmVnb24iLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Niwidm90ZV9jb3VudCI6N30seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIveXhkUHY1MUdXd1A3TVVveTdzSnNRenA2aTJMLmpwZyIsImdlbnJlX2lkcyI6WzE4LDEwNzcwXSwiaWQiOjI1MjczNSwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiR3JpZmZpbiBhbmQgUGhvZW5peCIsIm92ZXJ2aWV3IjoiR3JpZmZpbiBoYXMgYmVlbiBkaWFnbm9zZWQgd2l0aCB0ZXJtaW5hbCBjYW5jZXIuIEluc3RlYWQgb2YgcXVpZXRseSBmYWNpbmcgaGlzIGRlYXRoLCBoZSBkZWNpZGVzIHRvIGhhdmUgZnVuIGluIHRoZSB0aW1lIHJlbWFpbmluZy4gQXQgYSBjb2xsZWdlIGNsYXNzIG9uIGRlYXRoLCBoZSBtZWV0cyBQaG9lbml4LCB3aG8gaGFzIHRlcm1pbmFsIGxldWtlbWlhLiIsInBvcHVsYXJpdHkiOjQuMjc0LCJwb3N0ZXJfcGF0aCI6Ii9pNzd3aExDUFIwcDF0WHBsd3N3TWFwWm1RdjcuanBnIiwicmVsZWFzZV9kYXRlIjoiMTk3Ni0wMi0yNyIsInRpdGxlIjoiR3JpZmZpbiBhbmQgUGhvZW5peCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo1LjgsInZvdGVfY291bnQiOjZ9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOls1Myw4NzhdLCJpZCI6MjI4MjM4LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJUaGUgUGhvZW5peCBSaXNlcyIsIm92ZXJ2aWV3IjoiV29ybGRzIGNvbGxpZGUgd2hlbiBhIHRlYW0gb2YgYnJpbGxpYW50IHNjaWVudGlzdHMgYXJlIHJlY3J1aXRlZCB0byB3b3JrIHdpdGggYSBzZWNyZXRpdmUgZ292ZXJubWVudCBydW4gcHJvamVjdCBjYWxsZWQgdGhlIFBob2VuaXggUHJvZ3JhbSB0byBkZXZlbG9wIGNvdW50ZXIgbWVhc3VyZXMgZm9yIGNsaW1hdGUgYmFzZWQgd2VhcG9ucnkuIFNwZWNpYWwgQWdlbnRzIEJvYiBTbWl0aCBhbmQgVG9tIEpvbmVzIGhhbmQgcGlja2VkIHRoZSB0ZWFtIGFmdGVyIG9ic2VydmluZyB0aGVpciBzdWNjZXNzIHdpdGggYnVpbGRpbmcgdGhlIHdvcmxkcyBmaXJzdCBzcGFjZSBlbGV2YXRvciBmb3IgdGhlIEJvbm5lciBQcml6ZSBhIHNlY3JldCByZWNydWl0bWVudCBwcm9qZWN0IHB1cnBvc2VkIHRvIGZpbmQgdGhlIHdvcmxkcyBiZXN0IGFuZCBicmlnaHRlc3QuIEEgbmV3bHkgZm9ybWVkIHRlcnJvcmlzdCBncm91cCBpcyB1c2luZyBjbGltYXRlIGJhc2VkIHdlYXBvbnMgdG8gaG9sZCB0aGUgVVMgYW5kIGl0cyBhbGxpZXMgaG9zdGFnZS4gVXNpbmcgZXh0cmVtZWx5IGxvdyBmcmVxdWVuY3kgZGVsaXZlcnkgbWV0aG9kcyB0aGUgdGVycm9yaXN0cyBjYW4gY2F1c2UgZWFydGhxdWFrZXMsIGFsdGVyIHJhaW4gcGF0dGVybnMsIGNhdXNlIGRyb3VnaHRzLCBhbmQgY3JlYXRlIGRlYWRseSBzdG9ybXMgc2VlbWluZyBvdXQgb2YgdGhpbiBhaXI7IGJ1dCB0aGUgdGVycm9yaXN0IHRocmVhdCBpcyBub3QgdGhlIG9ubHkgY2hhbGxlbmdlIGZvciB0aGUgdGVhbS4gQSBkZWFkbHksIHZpbmRpY3RpdmUgbWVyY2VuYXJ5IGZyb20gdGhlaXIgcGFzdCwgSmFtYWwgRHVlZ3JvLCBoYXMgbGF1bmNoZWQgYSByZXZlbmdlIG9wZXJhdGlvbiB0byByZWFjcXVpcmUgdGVjaG5vbG9naWVzIGhpcyBjbGllbnRzIHdhbnQgcmV0dXJuZWQgdG8gdGhlbSBhbmQgd2lsbCBzdG9wIGF0IG5vdGhpbmcgaW4gb3JkZXIgdG8gcHJvdGVjdCBoaXMgaW50ZXJlc3RzLiIsInBvcHVsYXJpdHkiOjYuODA5LCJwb3N0ZXJfcGF0aCI6Ii9hWlBuUld4d0l2Ykg5dUdoejJyM0h5Y0VVMFMuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxMi0xMi0xMCIsInRpdGxlIjoiVGhlIFBob2VuaXggUmlzZXMiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6NC41LCJ2b3RlX2NvdW50IjozfSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii9RRjNFb0NmVDRkTkp0bWNYaU9pRlE5eUFMMi5qcGciLCJnZW5yZV9pZHMiOlsyNyw4NzgsNTNdLCJpZCI6NDE5ODI1LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJUaGUgUGhvZW5peCBUYXBlcyAnOTciLCJvdmVydmlldyI6IkluIDE5OTcsIGZvdXIgY2FtcGVycyB3ZW50IG1pc3NpbmcgZHVyaW5nIHRoZSBQaG9lbml4IExpZ2h0cyBpbmNpZGVudCBhbmQgdGhlaXIgYm9kaWVzIHdlcmUgbmV2ZXIgZm91bmQuIFRoZSBQaG9lbml4IFRhcGVzIDk3IGlzIGNvbXByaXNlZCBvZiB0aGVpciBmaW5hbCBmb290YWdlLiBUaGlzIGZpbG0gaXMgZGVkaWNhdGVkIHRvIHRoZSBsaXZlcyBsb3N0IGR1cmluZyB0aGUgZXZlbnRzIGRpc3BsYXllZC4gVG8gdGhlaXIgZmFtaWxpZXMgYW5kIGZyaWVuZHMgYW5kIHRvIHRoZSBhdXRob3JpdGllcyB3aG8gY29udGludWUgdG8gc2VhcmNoIGZvciBhbnN3ZXJzLiDigIsgVGhlIHRhcGVzIHdlcmUgZm91bmQgYnkgRHVzdGluIE1pbGxlcidzIGZhdGhlciB0d28geWVhcnMgYWZ0ZXIgRHVzdGluIHdhcyBteXN0ZXJpb3VzbHkgc2hvdCBhbmQga2lsbGVkIGF0IGEgdHJhZmZpYyBzdG9wIGluIFRleGFzLiBQZXRlciBNaWxsZXIgYmVsaWV2ZXMgaGlzIHNvbiB3YXMgYWN0aW5nIGFzIGEgd2hpc3RsZWJsb3dlciBhbmQgaGFkIHNtdWdnbGVkIHRoZSB0YXBlcyBmcm9tIGhpcyBjbGFzc2lmaWVkIGdvdmVybm1lbnQgYWdlbmN5IGluIGFuIGVmZm9ydCB0byBleHBvc2UgdGhlIHRydXRoIGFzIHRvIHdoYXQgcmVhbGx5IGhhcHBlbmVkIHRvIHRoZSBmb3VyIG1pc3NpbmcgY2FtcGVycyBzZWVuIGluIHRoZSB0YXBlcy4g4oCLIEFmdGVyIHNlYXJjaGluZyBldmVyeSBuZXdzcGFwZXIgYW5kIG1lZGlhIHB1YmxpY2F0aW9uIGFyb3VuZCBQaG9lbml4IGR1cmluZyB0aGF0IHRpbWUgcGVyaW9kLCB3ZSBvbmx5IGZvdW5kIG9uZSBpbml0aWFsIGFubm91bmNlbWVudCB0aGF0IGZvdXIgY2FtcGVycyB3ZXJlIHJlcG9ydGVkIG1pc3NpbmcsIGFzIHdlbGwgYXMgYSBmb3JtYWwgcG9saWNlIHJlcG9ydCBmb2xkZXIgd2l0aCBsb2NhbCBQRCBidXQgdGhlIGZvbGRlciBoYWQgbm8gZmlsZXMgaW5zaWRlLiIsInBvcHVsYXJpdHkiOjYuMzU0LCJwb3N0ZXJfcGF0aCI6Ii9wY0JybzA3VThoQVJ2Y29uY1lISkFRR3o1MEouanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxNi0wMS0wMSIsInRpdGxlIjoiVGhlIFBob2VuaXggVGFwZXMgJzk3IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjYuNiwidm90ZV9jb3VudCI6MTN9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiLzYxY3o4ZFpreUlvOW01YlZ3d2ZyWWN2VlppSy5qcGciLCJnZW5yZV9pZHMiOlsxMl0sImlkIjoxMDI0Mywib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIEZsaWdodCBvZiB0aGUgUGhvZW5peCIsIm92ZXJ2aWV3IjoiQSBjYXJnbyBhaXJjcmFmdCBjcmFzaGVzIGluIGEgc2FuZHN0b3JtIGluIHRoZSBTYWhhcmEgd2l0aCBsZXNzIHRoYW4gYSBkb3plbiBtZW4gb24gYm9hcmQuIE9uZSBvZiB0aGUgcGFzc2VuZ2VycyBpcyBhbiBhaXJwbGFuZSBkZXNpZ25lciB3aG8gY29tZXMgdXAgd2l0aCB0aGUgaWRlYSBvZiByaXBwaW5nIG9mZiB0aGUgdW5kYW1hZ2VkIHdpbmcgYW5kIHVzaW5nIGl0IGFzIHRoZSBiYXNpcyBmb3IgYSByZXBsYWNlbWVudCBhaXJjcmFmdCB0aGV5IHdpbGwgYnVpbGQgdG8gZXNjYXBlIGJlZm9yZSB0aGVpciBmb29kIGFuZCB3YXRlciBydW4gb3V0LiIsInBvcHVsYXJpdHkiOjguMzM4LCJwb3N0ZXJfcGF0aCI6Ii9pckF0SmpSUFYwd1hmREFSTVdlNlVYV1hPbE0uanBnIiwicmVsZWFzZV9kYXRlIjoiMTk2NS0xMi0xNSIsInRpdGxlIjoiVGhlIEZsaWdodCBvZiB0aGUgUGhvZW5peCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjIsInZvdGVfY291bnQiOjE4MX0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaldDR1REODFTQkY3eUxsdzlucWN2WVM3aVpKLmpwZyIsImdlbnJlX2lkcyI6WzEyLDE4LDEwNzUxXSwiaWQiOjUxODUxNCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiUGhvZW5peCBXaWxkZXIgYW5kIHRoZSBHcmVhdCBFbGVwaGFudCBBZHZlbnR1cmUiLCJvdmVydmlldyI6IkEgbG9zdCBvcnBoYW4gYm95IGFuZCBhIGdpYW50IGVsZXBoYW50IHRlYW0gdXAgdG8gdGFrZSBkb3duIGFuIGVsZXBoYW50IHBvYWNoaW5nIHN5bmRpY2F0ZS4iLCJwb3B1bGFyaXR5Ijo2LjIxMiwicG9zdGVyX3BhdGgiOiIvZENSVDhHczBRclpwUzFQd1BCOVFTUVhRY3BtLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTgtMDQtMTYiLCJ0aXRsZSI6IkFuIEVsZXBoYW50J3MgSm91cm5leSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo0LjgsInZvdGVfY291bnQiOjZ9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOltdLCJpZCI6MjI1MDQyLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJQaG9lbml4IFRhcGVzIiwib3ZlcnZpZXciOiJUaGUgZmlsbSBjb21wcmlzZXMgZWRpdGVkIGV4Y2VycHRzIGZyb20gNDAgSGl0Y2hjb2NrIGZpbG1zIGluIHNpeCBjaGFwdGVycywgZWFjaCBmb2N1c2luZyBvbiBhIGRpZmZlcmVudCBtb3RpZiB0aGF0IHJldmVhbHMgc29tZSBvZiBIaXRjaGNvY2vigJlzIGRhcmsgb2JzZXNzaW9ucyBhbmQgdGVjaG5pcXVlcy4iLCJwb3B1bGFyaXR5IjozLjMwNSwicG9zdGVyX3BhdGgiOiIvekJLakE0MzFITXVSQ1lBd05UWjRlVHJtQjhPLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjE5OTktMTAtMjAiLCJ0aXRsZSI6IlBob2VuaXggVGFwZXMiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6NSwidm90ZV9jb3VudCI6M31dLCJ0b3RhbF9wYWdlcyI6OCwidG90YWxfcmVzdWx0cyI6MTUzfQ==
+  recorded_at: Sat, 27 Mar 2021 01:08:16 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?page=2&query=Phoenix
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer HIDDEN
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 27 Mar 2021 01:08:17 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 38059ba65876500c040fb73e2cbaebf5.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - 4ytWZvrOWyYOp8B728NtXzbbq3ULU-7EMxPS4YlKlOiOgCaw40zyeQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/g85gxthQ69u1teBPfjlmE2zTs2n.jpg","genre_ids":[10770,35,99],"id":57837,"original_language":"en","original_title":"George
+        Carlin: On Location at Phoenix","overview":"Performing at the Celebrity Star
+        Theater in Phoenix on July 23, 1978, Carlin mesmerizes his audience in the
+        second of his 12 HBO specials. The show was originally planned as part of
+        a concert/sketch movie, The Illustrated George Carlin, that never came to
+        fruition.The routines include: Death, Kids & Parents, Newscast #2, Time and
+        Al Sleet, the Hippy-Dippy Weatherman. -- From Amazon.com","popularity":5.047,"poster_path":"/xGAW8AgQ8qDQcsAWImDHdsqvEye.jpg","release_date":"1978-07-23","title":"George
+        Carlin: On Location at Phoenix","video":false,"vote_average":7.5,"vote_count":14},{"adult":false,"backdrop_path":"/jMptDjXGYmKYLmOoT3IGYZ6Xh5L.jpg","genre_ids":[28,878],"id":26358,"original_language":"fr","original_title":"Phoenix","overview":"When
+        a mining colony is taken over by genetically altered androids, an elite attack
+        team is sent in to take down the android leader.","popularity":1.8,"poster_path":"/lJ48HI1gXhKckoAQwm2iytUQAYk.jpg","release_date":"1995-01-01","title":"Phoenix","video":false,"vote_average":4,"vote_count":3},{"adult":false,"backdrop_path":"/Oar4ImyY2K258nMNwt6sIDjQ8R.jpg","genre_ids":[],"id":565059,"original_language":"en","original_title":"NXT
+        TakeOver: Phoenix","overview":"One night before Royal Rumble 2019 comes to
+        the Talking Stick Resort Arena in Phoenix, the Superstars of NXT will take
+        center stage when TakeOver: Phoenix airs Saturday, Jan. 26.","popularity":3.536,"poster_path":"/qNkjkpHv2davoXBIQ5qG3a5fcvD.jpg","release_date":"2019-01-26","title":"NXT
+        TakeOver: Phoenix","video":true,"vote_average":7.9,"vote_count":7},{"adult":false,"backdrop_path":null,"genre_ids":[12,10751,14],"id":125089,"original_language":"en","original_title":"The
+        Phoenix and the Magic Carpet","overview":"Stuck in their late Grandfather''s
+        country cottage with no TV, Anthea, Robert and Chris are resigned to a boring
+        week until they find a mouldy old carpet and a strange golden egg. But when
+        the egg accidentally falls into the bonfire, it hatches into the mythical
+        firebird, the Gloden Phoenix. So begins an amazing journey and the adventure
+        of a lifetime, as the Phoenix takes them to a land of enchantment, magic and
+        fantasy - via a magic flying carpet. Written by L.H. Wong","popularity":4.138,"poster_path":"/11NILAmDYZEocRPzBmn4t05hi8D.jpg","release_date":"1995-11-21","title":"The
+        Phoenix and the Magic Carpet","video":false,"vote_average":4.8,"vote_count":5},{"adult":false,"backdrop_path":null,"genre_ids":[28,878,53],"id":302178,"original_language":"en","original_title":"Phoenix
+        9","overview":"After a global nuclear war has turned earth into a scorched
+        wasteland, a struggling group of survivors discovers a secret installation
+        that offers a new beginning - but not without a catch.","popularity":2.062,"poster_path":"/tAQw3m7CGe3qGsK7RxlqNy3p4PW.jpg","release_date":"2014-11-10","title":"Phoenix
+        9","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/ipMjZfd4nK9WQP9J8Fryl7TS2UJ.jpg","genre_ids":[],"id":478566,"original_language":"en","original_title":"Phoenix","overview":"a
+        middle aged man visits a brothel house where he encounters his estranged married
+        daughter as a sex worker. He and his daughter faces an identity crisis as
+        they attempt to suppress their hidden desires towards each other.","popularity":0.6,"poster_path":"/gJuSz3nO1KxOvstSW8PrXH7DVKz.jpg","release_date":"2017-09-08","title":"Phoenix","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/lbjuHNhg9GtQnAizkpQXnDz7GXC.jpg","genre_ids":[18],"id":299998,"original_language":"en","original_title":"Watch
+        Phoenix Rise","overview":"Watch Phoenix Rise is the tale of a young lady named
+        Phoenix who is just another \"pretty face\" in the hood until she decides
+        to become an \"urban model\" . where she discovers that her growing fame has
+        a downside as it tests her relationships with friends and family.","popularity":0.928,"poster_path":"/8VHmhVXaQV1htJ18L070FviMf9e.jpg","release_date":"2014-01-11","title":"Watch
+        Phoenix Rise","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":74339,"original_language":"en","original_title":"The
+        Phoenix Lights...We Are Not Alone","overview":"During the evening of March
+        13, 1997, a mile-wide, V-shaped formation of lights (that seemed to be attached
+        to something) slowly and silently traversed throughout Arizona at a very low
+        altitude for many hours. The inexplicable and awesome event was witnessed
+        by thousands of people, while they were looking up at the sky, purposely to
+        catch a glimpse of the Halle-Bopp Comet. The significant statewide incident
+        garnering headline news, catching the attention of USA Today, CNN, MSNBC,
+        The Discovery Channel, EXTRA, national morning TV shows, as well as the Evening
+        News with Tom Brokaw and Dan Rather.","popularity":2.354,"poster_path":"/6iMrDmI7Ni90PwHhKd4i59wbLYa.jpg","release_date":"2005-03-13","title":"The
+        Phoenix Lights...We Are Not Alone","video":false,"vote_average":6.8,"vote_count":8},{"adult":false,"backdrop_path":null,"genre_ids":[878],"id":357705,"original_language":"en","original_title":"Phoenix
+        Point","overview":"When the apocalypse arrives, it takes the form of a biochemical
+        virus. All social structures break down and a new world order emerges from
+        the heart of the desert. As chaos sets in, we follow the adventures of some
+        unlikely survivors, all searching for the elusive cure at Phoenix Point.","popularity":0.84,"poster_path":null,"release_date":"2005-01-20","title":"Phoenix
+        Point","video":false,"vote_average":1,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":703852,"original_language":"xx","original_title":"Phoenix","overview":"A
+        one-shot film about love and death.","popularity":0.6,"poster_path":"/6rhy3CLJgTJ73A2YX1VmAAfYNRv.jpg","release_date":"2020-05-13","title":"Phoenix","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[18,53,10749],"id":328178,"original_language":"fr","original_title":"Phoenix
+        Blue","overview":"","popularity":0.6,"poster_path":null,"release_date":"2001-01-01","title":"Phoenix
+        Blue","video":false,"vote_average":6,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99,10402],"id":73771,"original_language":"en","original_title":"Deep
+        Purple: Phoenix Rising","overview":"This documentary examines the period of
+        Deep Purple''s career when Ian Gillan and Roger Glover left the band, but
+        the group forged ahead by hiring David Coverdale. Included is a wealth of
+        live footage from the mid and late seventies, as well as a detailed explanation
+        of how the band finally sputtered to an end due to a drug overdose.","popularity":0.948,"poster_path":"/oJM3rCkknDaKsQlWF8QUAYnpr6l.jpg","release_date":"2011-06-28","title":"Deep
+        Purple: Phoenix Rising","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[14],"id":588649,"original_language":"en","original_title":"The
+        Water Phoenix","overview":"When an imprisoned mermaid is betrayed by her caretaker,
+        she must find a way to escape the aquarium alone.","popularity":0.705,"poster_path":"/nQRk1Eq9SZn6JVTRVs3EzLGt7HS.jpg","release_date":"2017-08-04","title":"The
+        Water Phoenix","video":false,"vote_average":6,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":127180,"original_language":"de","original_title":"Phoenix
+        in der Asche","overview":"","popularity":0.6,"poster_path":null,"release_date":"2011-11-10","title":"No
+        Ashes, No Phoenix","video":false,"vote_average":3.8,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[878,28,53],"id":774690,"original_language":"en","original_title":"Cyberpunk
+        2077: Phoenix Program","overview":"Just an epic action mash up between Keanu
+        Reeves: Johnny Silverhand meets Matrix meets John Wick meets Gaming !","popularity":1.497,"poster_path":"/g2mNySTx10cwYVV8GHIpQueBRDD.jpg","release_date":"2020-12-05","title":"Cyberpunk
+        2077: Phoenix Program","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[27],"id":423625,"original_language":"en","original_title":"Curse
+        of the Phoenix","overview":"A young man becomes haunted by a wraithe after
+        becoming obsessed with a woman''s death from 160 years ago.","popularity":0.826,"poster_path":"/kHfDnQatKAmSp5RDyzJxtmATAQq.jpg","release_date":"2014-01-01","title":"Curse
+        of the Phoenix","video":false,"vote_average":6,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":388680,"original_language":"en","original_title":"The
+        Phoenix","overview":"ABC TV movie about Bennu, an alien from another world
+        who is discovered buried in a Peruvian sarcophagus. He is brought back to
+        life with only vague memories of some sort of mission he was to perform on
+        Earth on behalf of his home planet. Unfortunately, the American and Peruvian
+        governments wish to capture and study Bennu, so he escapes in order to discover
+        the meaning of his journey to Earth.","popularity":0.6,"poster_path":null,"release_date":"1981-04-25","title":"The
+        Phoenix","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":511266,"original_language":"en","original_title":"The
+        Phoenix","overview":"The ancient myth of the phoenix, the legendary bird with
+        the amazing power of self-regeneration, is reborn with a modern twist. In
+        this animated adaptation of a story by Sylvia Townsend Warner, we follow Lord
+        Strawberry''s search for the fabled bird. He finds it in the deserts of Arabia
+        and brings it home to his aviary. Upon Lord Stawberry''s death, however, the
+        phoenix ends up as a sideshow in a fairground. This spirited satire of human
+        foibles, with its timely message about our treatment of nature''s creatures,
+        will appeal to young people and adults alike.","popularity":0.6,"poster_path":"/3WVK5DrdHTKio2h1X0wRMLbgrle.jpg","release_date":"1990-01-01","title":"The
+        Phoenix","video":false,"vote_average":5,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":382924,"original_language":"en","original_title":"Phoenix
+        Dance","overview":"A heroic journey of transformation and healing, Phoenix
+        Dance challenges our expectations of what it means to be \"disabled.\" In
+        March, 2001, renowned dancer Homer Avila discovered that the pain in his hip
+        was cancer. A month later, his right leg and most of his hip were amputated.
+        Through interviews, studio rehearsals, and performances, Phoenix Dance follows
+        the evolution of Pas, a pas de deux created for Avila by choreographer Alonzo
+        King.","popularity":0.6,"poster_path":null,"release_date":"2006-01-01","title":"Phoenix
+        Dance","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":200055,"original_language":"en","original_title":"Phoebe
+        Phoenix","overview":"A sci-fi-material-arts-music-movie.","popularity":0.6,"poster_path":null,"release_date":"2011-01-18","title":"Phoebe
+        Phoenix","video":false,"vote_average":0,"vote_count":0}],"total_pages":8,"total_results":153}'
+  recorded_at: Sat, 27 Mar 2021 01:08:17 GMT
+recorded_with: VCR 6.0.0

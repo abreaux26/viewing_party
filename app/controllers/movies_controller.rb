@@ -2,6 +2,10 @@ class MoviesController < ApplicationController
   def discover; end
 
   def search
-    @top_forty = @movie_service.top_forty if params[:q] == 'top_rated'
+    if params[:q] == 'top_rated'
+      @top_forty = @movie_service.top_forty
+    elsif params[:q]
+      @search = @movie_service.search(params[:q])
+    end
   end
 end
