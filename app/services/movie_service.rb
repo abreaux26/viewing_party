@@ -12,18 +12,20 @@ class MovieService
   end
 
   def movie_detail_for(movie_id)
-    get_data("/3/movie/#{movie_id}")
+    @movie_detail_for ||= get_data("/3/movie/#{movie_id}")
   end
 
-  def cast(movie_id)
+  def genres(movie_id)
+    movie_detail_for(movie_id)[:genres].map do |genre_data|
+      genre_data[:name]
+    end
+  end
+
+  def casts(movie_id)
     parse_data = get_data("/3/movie/#{movie_id}/credits")
     parse_data[:cast][0..9].map do |data|
       Cast.new(data)
     end
-  end
-
-  def review_count(movie_id)
-    reviews(movie_id).size
   end
 
   def reviews(movie_id)

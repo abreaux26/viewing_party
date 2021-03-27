@@ -8,4 +8,12 @@ class MoviesController < ApplicationController
       @search = @movie_service.search(params[:q])
     end
   end
+
+  def detail
+    @user = current_user
+    @movie = @movie_service.movie_detail_for(params[:id])
+    @genres = @movie_service.genres(params[:id])
+    @casts = @movie_service.casts(params[:id])
+    @reviews = @movie_service.reviews(params[:id])
+  end
 end

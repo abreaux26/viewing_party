@@ -11,7 +11,8 @@
       <% if @top_forty.present? %>
         <% @top_forty.each do |movie| %>
           <div class="movie" id="movie-<%= movie.id %>">
-            <div class="title"><%= link_to movie.title, movie_path(movie.id) %></div>, Vote Average: <div class="vote_average"><%= movie.vote_average%></div>
+            <div class="title"><%= link_to movie.title, movie_path(movie.id) %></div>
+            <div class="vote_average"> Vote Average:<%= movie.vote_average%></div>
           </div>
         <% end %>
       <% end %>
