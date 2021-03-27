@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get '/discover', to: 'movies#discover', as: 'discover'
   get '/movies', to: 'movies#search', as: 'movies'
   get '/movies/:id', to: 'movies#detail', as: 'movie'
+  resources :events, only: [:new, :create]
 end
