@@ -12,7 +12,7 @@ class MovieService
   end
 
   def movie_detail_for(movie_id)
-    @_movie_detail_for ||= get_data("/3/movie/#{movie_id}")
+    @movie_detail_for ||= get_data("/3/movie/#{movie_id}")
   end
 
   def genres(movie_id)
