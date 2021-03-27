@@ -14,9 +14,11 @@ RSpec.describe 'discover movies page', type: :feature do
   end
 
   it 'top 40 movies button takes you to the movies page' do
-    click_link 'Find Top 40 Movies'
+    VCR.use_cassette('top_forty') do
+      click_link 'Find Top 40 Movies'
 
-    expect(current_path).to eq(movies_path)
+      expect(current_path).to eq(movies_path)
+    end
   end
 
   it 'has an option to search for movies by keyword(title)' do
@@ -26,10 +28,11 @@ RSpec.describe 'discover movies page', type: :feature do
   end
 
   it 'search by movie title takes you to the movies page' do
-    fill_in 'q', with: 'Phoenix'
-    click_button 'Search by Movie Title'
+    VCR.use_cassette('search_movie_data') do
+      fill_in 'q', with: 'Phoenix'
+      click_button 'Search by Movie Title'
 
-    expect(current_path).to eq(movies_path)
+      expect(current_path).to eq(movies_path)
+    end
   end
-
 end

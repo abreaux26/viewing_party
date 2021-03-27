@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
-  def discovery; end
+  def discover; end
 
-  def search; end
+  def search
+    @top_forty = @movie_service.top_forty if params[:q] == 'top_rated'
+  end
 end
