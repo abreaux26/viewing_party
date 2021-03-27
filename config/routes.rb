@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   post '/dashboard', to: 'user_friends#create'
   get '/discover', to: 'movies#discover', as: 'discover'
   get '/movies', to: 'movies#search', as: 'movies'
-  get '/movies/:id', to: 'movies#details', as: 'movie'
+  get '/movies/:id', to: 'movies#detail', as: 'movie'
 end
