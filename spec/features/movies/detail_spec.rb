@@ -8,7 +8,7 @@ RSpec.describe "When I visit the movies detail page", type: :feature do
   it 'I see information about the movie' do
     visit discover_path
 
-    VCR.use_cassette('movie_data_details') do
+    VCR.use_cassette('movie_data_details_cassette') do
       fill_in :q, with: 'Phoenix'
       click_on('Search by Movie Title')
 
