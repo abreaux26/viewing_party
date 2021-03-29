@@ -4,4 +4,8 @@ class EventsController < ApplicationController
     @user = current_user
     @movie = @movie_service.movie_detail_for(params[:movie])
   end
+
+  def create
+    binding.pry
+  end
 end
