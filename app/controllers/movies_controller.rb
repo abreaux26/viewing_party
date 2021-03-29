@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
-  def discover; end
 
-  def search
+  def index
     if params[:q] == 'top_rated'
       @top_forty = @movie_service.top_forty
     elsif params[:q]
@@ -9,7 +8,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  def detail
+  def show
     @user = current_user
     @movie = @movie_service.movie_detail_for(params[:id])
     @genres = @movie_service.genres(params[:id])
