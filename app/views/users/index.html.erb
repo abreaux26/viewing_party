@@ -1,0 +1,27 @@
+<header>
+  <div class="text-center">
+    <h1>Welcome <%= @user.username %>!</h1>
+  </div>
+</header>
+<body>
+  <div class="text-center" id="discover-movies">
+    <%= link_to "Discover Movies", discover_path, class: 'btn btn-dark text-light' %>
+  </div>
+  <div class="jumbotron" id="friends">
+    <h3 class="display-4">Friends</h3>
+    <%= form_with url: dashboard_path, local: true do |form| %>
+      <%= form.email_field :friend %>
+      <%= form.submit "Add Friend" %>
+    <% end %>
+    <% if !@friends.empty? %>
+      <% @friends.each do |friend| %>
+        <p><%= friend.username %></p>
+      <% end %>
+    <% else %>
+      <p>You currently have no friends</p>
+    <% end %>
+  </div>
+  <div class="jumbotron" id="viewing-parties">
+    <h3 class="display-4">Viewing Parties</h3>
+  </div>
+</body>
