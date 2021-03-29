@@ -1,1 +1,12 @@
 <h2><%= @movie[:title] %></h2>
+<%= form_with url: events_path, local: :true do |f| %>
+  <%= f.label :duration, "Duration:" %>
+  <%= f.time_field :duration %>
+  <%= f.label :date, "Date:" %>
+  <%= f.date_field :date %>
+  <%= f.label :time, "Time:" %>
+  <%= f.time_field :time %>
+  <%= f.label :friend, "Invite your friends:" %>
+  <%= f.collection_check_boxes :friend, @user.friends, :id, :username %>
+  <%= f.submit 'Create Viewing Party' %>
+<% end %>
