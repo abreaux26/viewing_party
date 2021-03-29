@@ -16,7 +16,6 @@ RSpec.describe 'new event page', type: :feature do
       click_on('Find Top 40 Movies')
       @movie_title = find(".title", match: :first).text
       click_on(@movie_title)
-      @movie_duration = find(".duration")
       click_on('Create a Viewing Party')
     end
   end
