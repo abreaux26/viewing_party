@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
   def new
     @user = current_user
-    @movie = @movie_service.movie_detail_for(params[:movie])
+    @movie = MovieService.movie_detail_for(params[:movie])
   end
 
   def create
-    @movie_details = @movie_service.movie_detail_for(params[:movie])
+    @movie_details = MovieService.movie_detail_for(params[:movie])
     @user = current_user
     if params[:duration].to_i < @movie_details[:runtime].to_i
       flash[:error] = "Please enter a duration longer than #{@movie_details[:runtime]} minutes."

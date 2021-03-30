@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'new event page', type: :feature do
   before :each do
-    @movie_service = MovieService.new
-
     @user1 = User.create!(username: 'user1', email: 'user1@email.com', password: 'password')
     @user2 = User.create!(username: 'user2', email: 'user2@email.com', password: 'password')
     @user3 = User.create!(username: 'user3', email: 'user3@email.com', password: 'password')
@@ -15,10 +13,10 @@ RSpec.describe 'new event page', type: :feature do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
     VCR.use_cassette('top_forty_movies') do
-      @movie = @movie_service.movie_detail_for(19404)
       visit movies_path
-      click_on('Find Top 40 Movies')
-      click_on(@movie[:title])
+      click_on('Top 40 Movies')
+      @movie = MovieService.movie_detail_for(19404)
+      visit "movies/#{@movie[:id]}"
       click_on('Create a Viewing Party')
     end
   end
