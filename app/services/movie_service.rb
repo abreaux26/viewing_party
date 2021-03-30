@@ -1,5 +1,4 @@
 class MovieService
-
   def self.search(keyword)
     page1 = get_data("/3/search/movie?page=1&query=#{keyword}")
     page2 = get_data("/3/search/movie?page=2&query=#{keyword}")
@@ -41,8 +40,6 @@ class MovieService
       SearchMovie.new(data)
     end
   end
-
-  private
 
   def self.connection
     Faraday.new('https://api.themoviedb.org') do |conn|

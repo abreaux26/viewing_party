@@ -1,5 +1,4 @@
 class MoviesController < ApplicationController
-
   def index
     if params[:q] == 'top_rated'
       @top_forty = MovieService.top_forty
