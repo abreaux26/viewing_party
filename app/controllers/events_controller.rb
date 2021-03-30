@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   def new
     @user = current_user
     @movie = @movie_service.movie_detail_for(params[:movie])
@@ -24,7 +23,7 @@ class EventsController < ApplicationController
             Attendee.create(event_id: @event.id, friend_id: friend)
           end
         end
-        flash[:notice] = "viewing party created!"
+        flash[:notice] = 'viewing party created!'
         redirect_to dashboard_path
       else
         flash[:error] = "You must've forgot some information, try again!"
