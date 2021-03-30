@@ -70,13 +70,36 @@ for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+1. All tests: insert `bundle exec rspec` in your terminal.
+2. `feature` tests only: insert `bundle exec rspec spec/features` in your terminal.
+3. `model` tests only: insert `bundle exec rspec spec/models` in your terminal.
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+Below are two examples of a happy and sad path when trying to log in.
 
-    Give an example
+```
+  it 'I am taken to my dashboard after a successful login' do
+    fill_in :email, with: @user1.email
+    fill_in :password, with: @user1.password
+
+    click_button "Log In"
+
+    expect(current_path).to eq(dashboard_path)
+
+    expect(page).to have_content("Welcome #{@user1.username}!")
+  end
+
+  it 'I see an error for an unsuccessful login' do
+    fill_in :email, with: @user1.email
+    fill_in :password, with: "wrong password"
+
+    click_on "Log In"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Invalid Credentials!")
+  end
+```
 
 ### And coding style tests
 
@@ -86,7 +109,32 @@ Explain what these tests test and why
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+### Heroku
+1. Create with directory that contains rails app
+  * `heroku create`
+    * If you are unsure which stack to use, read this [article](https://devcenter.heroku.com/articles/stack)
+2. Verify remote is running
+  * `git config --list | grep heroku`
+3. Deploy code - **never push anything but main branch**
+  * `git push heroku main`
+4. If no errors, migrate database
+  * `heroku run rails db:migrate`
+
+#### Visit App
+1. Assign one **dyno** running the app
+  * `heroku ps:scale web=1`
+2. Check the state of app's dyno
+  * `heroku ps`
+3. Oopen the app in brower
+  * `heroku open`
+
+#### Remove an app
+`heroku apps:destroy`
+
+#### Drop,Create,Migrate,Seed Database
+1. `heroku pg:reset DATABASE`
+2. `heroku run rails db:migrate`
+3. `heroku run rails db:seed`
 
 ## API
 
