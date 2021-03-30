@@ -10,7 +10,9 @@
   <p>
     <b>Vote Average:</b> <%= @movie[:vote_average] %>
     <b>Runtime:</b> <%= @movie[:runtime]/60 %>hr <%= @movie[:runtime] % 60 %>min
-    <b>Genre(s):</b> <%= @genres.sort.join(", ") %>
+    <b>Genre(s):</b> <%= @movie[:genres].map do |genre_data| %>
+                        <% genre_data[:name] %>
+                     <% end.sort.join(", ") %>
   </p><hr>
 </section>
 

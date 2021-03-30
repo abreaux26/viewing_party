@@ -6,13 +6,7 @@ class MovieService
   end
 
   def self.movie_detail_for(movie_id)
-    @movie_detail_for ||= get_data("/3/movie/#{movie_id}")
-  end
-
-  def self.genres(movie_id)
-    movie_detail_for(movie_id)[:genres].map do |genre_data|
-      genre_data[:name]
-    end
+    get_data("/3/movie/#{movie_id}")
   end
 
   def self.casts(movie_id)

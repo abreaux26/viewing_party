@@ -10,7 +10,6 @@ class MoviesController < ApplicationController
   def show
     @user = current_user
     @movie = MovieService.movie_detail_for(params[:id])
-    @genres = MovieService.genres(params[:id])
     @casts = MovieService.casts(params[:id])
     @reviews = MovieService.reviews(params[:id])
   end
