@@ -1,0 +1,13 @@
+<h2><%= @movie[:title] %></h2>
+<%= form_with url: events_path, local: :true do |f| %>
+  <%= f.hidden_field :api_movie_id, value: @movie[:id] %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.label :duration, "Duration:" %>
+  <%= f.number_field :duration %>
+  <%= f.label :start_time, "Start Time:" %>
+  <%= f.datetime_field :start_time %>
+  <%= f.label :friends, "Invite your friends:" %>
+  <%= f.collection_check_boxes :friends, @user.friends, :id, :username, include_hidden: false %>
+  <%= f.submit 'Create Viewing Party' %>
+<% end %>

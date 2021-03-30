@@ -3,7 +3,7 @@
     <h1>Welcome <%= @user.username %>!</h1>
   </div>
 </header>
-
+<%= link_to "Create a Viewing Party", new_event_path(api_movie_id: @movie[:id]), class: "btn btn-dark text-light" %>
 <h2><%= @movie[:title] %></h2>
 
 <section>
