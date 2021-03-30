@@ -2,8 +2,8 @@
   <h1>Welcome to Viewing Party!</h1>
   <h3>Please Register for an Account</h3><br>
   <%= form_with model: @user, url: registration_path, local: true do |form| %>
-    <p><%= form.text_field :username, placeholder: 'Username' %></p>
-    <p><%= form.email_field :email, placeholder: 'Email' %></p>
+    <p><%= form.text_field :username, placeholder: 'Username', value: @user.username %></p>
+    <p><%= form.email_field :email, placeholder: 'Email', value: @user.email %></p>
     <p><%= form.password_field :password, placeholder: 'Password' %></p>
     <p><%= form.password_field :password_confirmation, placeholder: 'Password Confirmation' %></p>
     <p><%= form.submit 'Register' %></p>
