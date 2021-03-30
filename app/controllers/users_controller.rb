@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  def dashboard
+  def index
     @user = current_user
     @friends = @user.friends
   end
