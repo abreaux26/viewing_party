@@ -1,6 +1,6 @@
 <h2><%= @movie[:title] %></h2>
 <%= form_with url: events_path, local: :true do |f| %>
-  <%= f.hidden_field :movie, value: @movie[:id] %>
+  <%= f.hidden_field :api_movie_id, value: @movie[:id] %>
   <%= f.label :name, "Name:" %>
   <%= f.text_field :name %>
   <%= f.label :duration, "Duration:" %>

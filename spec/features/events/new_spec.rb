@@ -77,24 +77,11 @@ RSpec.describe 'new event page', type: :feature do
   end
 
   it 'wont create the viewing party without all of the required fields' do
-    VCR.use_cassette('top_forty_movies') do
+    VCR.use_cassette('top_forty_movies_required_fields') do
       fill_in 'duration', with: '210'
       click_on('Create Viewing Party')
 
       expect(page).to have_content("You must've forgot some information, try again!")
-
-      fill_in 'name', with: 'event 1'
-      fill_in 'duration', with: '210'
-      click_on('Create Viewing Party')
-
-      expect(page).to have_content("You must've forgot some information, try again!")
-
-      fill_in 'name', with: 'event 1'
-      fill_in 'duration', with: '210'
-      fill_in 'start_time', with: DateTime.new(2021, 4, 3, 15, 30)
-      click_on('Create Viewing Party')
-
-      expect(current_path).to eq(dashboard_path)  
     end
   end
 end
