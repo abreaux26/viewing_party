@@ -9,12 +9,6 @@ class MovieService
     get_data("/3/movie/#{movie_id}")
   end
 
-  def self.genres(movie_id)
-    movie_detail_for(movie_id)[:genres].map do |genre_data|
-      genre_data[:name]
-    end
-  end
-
   def self.casts(movie_id)
     parse_data = get_data("/3/movie/#{movie_id}/credits")
     parse_data[:cast][0..9].map do |data|
