@@ -93,7 +93,7 @@ RSpec.describe 'As a user' do
 
       click_button('Register')
 
-      expect(page).to have_content("Password confirmation required")
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
 
     it 'I see an error for an unsuccessful registration without any fields filled in' do

@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get '/registration', to: 'sessions#new'
   post '/registration', to: 'sessions#create'
 
-  get '/dashboard', to: 'users#dashboard', as: 'dashboard'
+  get '/dashboard', to: 'users#index', as: 'dashboard'
   post '/dashboard', to: 'user_friends#create'
-  get '/discover', to: 'movies#discover', as: 'discover'
-  get '/movies', to: 'movies#search', as: 'movies'
-  get '/movies/:id', to: 'movies#detail', as: 'movie'
+
+  get '/discover', to: 'discover#index', as: 'discover'
+  get '/movies', to: 'movies#index', as: 'movies'
+  get '/movies/:id', to: 'movies#show', as: 'movie'
   resources :events, only: [:new, :create]
 end

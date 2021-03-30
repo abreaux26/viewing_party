@@ -1,19 +1,17 @@
 class MoviesController < ApplicationController
-  def discover; end
-
-  def search
+  def index
     if params[:q] == 'top_rated'
-      @top_forty = @movie_service.top_forty
+      @top_forty = MovieService.top_forty
     elsif params[:q]
-      @search = @movie_service.search(params[:q])
+      @search = MovieService.search(params[:q])
     end
   end
 
-  def detail
+  def show
     @user = current_user
-    @movie = @movie_service.movie_detail_for(params[:id])
-    @genres = @movie_service.genres(params[:id])
-    @casts = @movie_service.casts(params[:id])
-    @reviews = @movie_service.reviews(params[:id])
+    @movie = MovieService.movie_detail_for(params[:id])
+    @genres = MovieService.genres(params[:id])
+    @casts = MovieService.casts(params[:id])
+    @reviews = MovieService.reviews(params[:id])
   end
 end

@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
       session[:user_id] = user.id
       redirect_to dashboard_path
     else
-      flash[:error] = 'Invalid Credentials!'
+      flash.now.alert = 'Invalid Credentials!'
       render :index
     end
   end
