@@ -1,20 +1,18 @@
 class SessionsController < ApplicationController
-  before_action :password_confirmed?, only: [:create]
-
   def new
     @user = User.new
   end
 
   def create
-    user = user_params
-    user[:username] = user[:username].downcase
-    new_user = User.create(user)
-    if new_user.save && password_confirmed?
-      session[:user_id] = new_user.id
+    new_user = user_params
+    new_user[:username] = new_user[:username].downcase
+    new_user[:email] = new_user[:email].downcase
+    @user = User.create(new_user)
+    if @user.save
+      session[:user_id] = @user.id
       redirect_to dashboard_path
     else
-      flash[:error] = new_user.errors.full_messages.to_sentence
-      flash[:error] += 'Password confirmation required' unless password_confirmed?
+      flash.now.alert = @user.errors.full_messages.to_sentence
       render :new
     end
   end
@@ -22,10 +20,6 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
-  end
-
-  def password_confirmed?
-    params[:user][:password_confirmation] == params[:user][:password]
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end
