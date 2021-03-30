@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#index', as: 'dashboard'
   post '/dashboard', to: 'user_friends#create'
+
   get '/discover', to: 'discover#index', as: 'discover'
   get '/movies', to: 'movies#index', as: 'movies'
   get '/movies/:id', to: 'movies#show', as: 'movie'
+  resources :events, only: [:new, :create]
 end

@@ -8,7 +8,7 @@ RSpec.describe "When I visit the movies detail page", type: :feature do
   it 'I see information about the movie' do
     visit discover_path
 
-    VCR.use_cassette('movie_data_details') do
+    VCR.use_cassette('movie_data_details_cassette') do
       fill_in :q, with: 'Phoenix'
       click_on('Search by Movie Title')
 
@@ -25,6 +25,25 @@ RSpec.describe "When I visit the movies detail page", type: :feature do
       expect(page).to have_css(".summary")
       expect(page).to have_css(".casts")
       expect(page).to have_css(".reviews")
+    end
+  end
+
+  it 'has a button to create a viewing party' do
+    visit discover_path
+
+    VCR.use_cassette('movie_data_details') do
+      fill_in :q, with: 'Phoenix'
+      click_on('Search by Movie Title')
+
+      movie_title = find(".title", match: :first).text
+      vote_average = find(".vote_average", match: :first).text
+      click_on(movie_title)
+
+      expect(page).to have_link('Create a Viewing Party')
+
+      click_on('Create a Viewing Party')
+
+      expect(current_path).to eq(new_event_path)
     end
   end
 end
