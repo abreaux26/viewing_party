@@ -28,26 +28,25 @@ RSpec.describe 'new event page', type: :feature do
     expect(page).to have_content(@movie_title)
   end
 
+  it 'should have a field for a name' do
+
+    expect(page).to have_field('name')
+  end
+
   it 'should have a field for duration' do
 
-    expect(page).to have_field('duration_hours')
-    expect(page).to have_field('duration_minutes')
+    expect(page).to have_field('duration')
   end
 
-  it 'should have a field to select a date' do
+  it 'should have a field to select a start time' do
 
-    expect(page).to have_field('date')
-  end
-
-  it 'should have a field to select a time' do
-
-    expect(page).to have_field('time')
+    expect(page).to have_field('start_time')
   end
 
   it 'should have checkboxes next to each friend' do
-    expect(page).to have_css("input[type='checkbox']", id: "friend_#{@user2.id}")
-    expect(page).to have_css("input[type='checkbox']", id: "friend_#{@user3.id}")
-    expect(page).to_not have_css("input[type='checkbox']", id: "friend_#{@user4.id}")
+    expect(page).to have_css("input[type='checkbox']", id: "friends_#{@user2.id}")
+    expect(page).to have_css("input[type='checkbox']", id: "friends_#{@user3.id}")
+    expect(page).to_not have_css("input[type='checkbox']", id: "friends_#{@user4.id}")
   end 
 
   it 'should have a button to create a party' do
@@ -56,11 +55,48 @@ RSpec.describe 'new event page', type: :feature do
   end
 
   it 'can create a new viewing party' do
-    fill_in 'duration_hours', with: '3'
-    fill_in 'duration_minutes', with: '30'
-    fill_in 'date', with: '04/10/2021'
-    fill_in 'time', with: '03:30'
-    find("#friend_#{@user2.id}").check
-    click_on('Create Viewing Party')
+    VCR.use_cassette('create_viewing_party') do
+      fill_in 'name', with: 'event 1'
+      fill_in 'duration', with: '200'
+      fill_in 'start_time', with: DateTime.new(2021, 4, 3, 15, 30)
+      find("#friends_#{@user2.id}").check
+      click_on('Create Viewing Party')
+
+      expect(current_path).to eq(dashboard_path)
+    end
+  end
+
+  it 'wont create the viewing party if the duration is shorter than the movie runtime' do
+    VCR.use_cassette('top_forty_movies') do
+      fill_in 'name', with: 'event 1'
+      fill_in 'duration', with: '100'
+      fill_in 'start_time', with: DateTime.new(2021, 4, 3, 15, 30)
+      find("#friends_#{@user2.id}").check
+      click_on('Create Viewing Party')
+
+      expect(page).to have_content("Please enter a duration longer than #{@movie[:runtime]} minutes.")
+    end
+  end
+
+  it 'wont create the viewing party without all of the required fields' do
+    VCR.use_cassette('top_forty_movies') do
+      fill_in 'duration', with: '210'
+      click_on('Create Viewing Party')
+
+      expect(page).to have_content("You must've forgot some information, try again!")
+
+      fill_in 'name', with: 'event 1'
+      fill_in 'duration', with: '210'
+      click_on('Create Viewing Party')
+
+      expect(page).to have_content("You must've forgot some information, try again!")
+
+      fill_in 'name', with: 'event 1'
+      fill_in 'duration', with: '210'
+      fill_in 'start_time', with: DateTime.new(2021, 4, 3, 15, 30)
+      click_on('Create Viewing Party')
+
+      expect(current_path).to eq(dashboard_path)  
+    end
   end
 end
