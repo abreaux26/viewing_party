@@ -103,9 +103,21 @@ Below are two examples of a happy and sad path when trying to log in.
 
 ### And coding style tests
 
-Explain what these tests test and why
+* We used `RuboCop` - static code analyzer and code formatter
+* Steps to install [RuboCop](https://github.com/rubocop/rubocop)
 
-    Give an example
+```
+Inspecting 22 files
+.....C................
+
+Offenses:
+
+app/controllers/sessions_controller.rb:6:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def create ...
+  ^^^^^^^^^^
+
+22 files inspected, 1 offense detected
+```
 
 ## Deployment
 
