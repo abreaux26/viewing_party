@@ -24,12 +24,12 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 
 # Viewing Party
 
-Viewing party is an application in which users can explore movie options and create a viewing party event for the user and friend's.
+Viewing party is an application which allows users to search for popular movies, view details and reviews of movies and invite friends to a scheduled party to watch the movie. It consumes The MovieDB API (https://developers.themoviedb.org/) to provide reviews and up to date info about movies.
 
-This initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2), but as
-I can no longer open that page as there are too many comments, I have
-moved it here.
+Our database structure links users to friends and to viewing party events, with events being linked to a movie and other users who have been invited to attend that event.
+
+![DB](https://user-images.githubusercontent.com/72584659/113029720-00aedf80-914a-11eb-9c06-b54648705240.png)
+
 
 ## Summary
 
@@ -48,25 +48,47 @@ for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You will need to install the mailcatcher gem locally in order to test the email functionality in the app.
 
-    Give examples
+    `gem install mailcatcher`
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development
-env running
+1. Fork and clone the repo
 
-Say what the step will be
+2. Install the gem package
 
-    Give the example
+    `bundle install`
 
-And repeat
+3. Create the database
 
-    until finished
+    `rails db:create`
 
-End with an example of getting some data out of the system or using it
-for a little demo
+4. Migrate the existing Schema
+
+    `rails db:migrate`
+
+Optional: Seed the datebase
+    `rails db:seed`
+
+5. Add MovieDB API Key locally (See [API](#api) section for details.)
+
+    Note: This app uses The MovieDB API to support most of it's functionality. Most tests will not pass and most parts of the app will not work without an API key added.
+
+6. Run tests (See Runing the tests](#running-the-tests) section for more details)
+
+    `bundle exec RSpec`
+
+7. Start localhostserver
+
+    `rails s`
+
+8. Access localhost server in browser
+
+    `localhost:3000`
+
+![viewing_party_demo](https://user-images.githubusercontent.com/72584659/113209443-52319a00-9230-11eb-980d-d35822054642.gif)    
+
 
 ## Running the tests
 
