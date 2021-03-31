@@ -11,7 +11,7 @@ RSpec.describe FriendNotifierMailer, type: :mailer do
     email_info = {
       user: sending_user,
       friend: "user2",
-      message: "Event Details: Name: Event Party Duration: 300 Start Time: "
+      message: "Event Details: Name: Movie Name Host: newuser Duration: 300 Start Time: April 1, 2021 09:30 AM"
     }
 
     let(:mail) { FriendNotifierMailer.inform(email_info, "user2@email.com") }
@@ -25,13 +25,13 @@ RSpec.describe FriendNotifierMailer, type: :mailer do
 
     it "renders the body" do
       expect(mail.text_part.body.to_s).to include("Hello user2")
-      expect(mail.text_part.body.to_s).to include("newuser is inviting you to a viewing party: Event Details: Name: Event Party Duration: 300 Start Time: ")
+      expect(mail.text_part.body.to_s).to include("newuser is inviting you to a viewing party: Event Details: Name: Movie Name Host: newuser Duration: 300 Start Time: April 1, 2021 09:30 AM")
 
       expect(mail.html_part.body.to_s).to include("Hello user2")
-      expect(mail.html_part.body.to_s).to include("newuser is inviting you to a viewing party: Event Details: Name: Event Party Duration: 300 Start Time: ")
+      expect(mail.html_part.body.to_s).to include("newuser is inviting you to a viewing party: Event Details: Name: Movie Name Host: newuser Duration: 300 Start Time: April 1, 2021 09:30 AM")
 
       expect(mail.body.encoded).to include("Hello user2")
-      expect(mail.body.encoded).to include("newuser is inviting you to a viewing party: Event Details: Name: Event Party Duration: 300 Start Time: ")
+      expect(mail.body.encoded).to include("newuser is inviting you to a viewing party: Event Details: Name: Movie Name Host: newuser Duration: 300 Start Time: April 1, 2021 09:30 AM")
     end
   end
 end
