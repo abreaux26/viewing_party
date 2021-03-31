@@ -29,7 +29,7 @@
           <p><%= event.start_time.strftime('%B %d, %Y %l:%M %p') %></p>
           <p>Hosting</p>
           <% event.friends.each do |friend| %>
-            <p><%= friend.username %></p>
+            <%= friend.username %><br>
           <% end %>
         <% end %>
       </div>
