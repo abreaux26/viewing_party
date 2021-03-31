@@ -10,7 +10,6 @@ class EventsController < ApplicationController
     @event = current_user.events.create(event_params)
     if @event.save
       create_attendees
-      flash[:notice] = 'viewing party created!'
       email_friends
       redirect_to dashboard_path
     else
@@ -59,6 +58,7 @@ class EventsController < ApplicationController
       }
 
       FriendNotifierMailer.inform(email_info, recipient).deliver_now
+      flash[:notice] = 'viewing party created!'
     end
   end
 end
