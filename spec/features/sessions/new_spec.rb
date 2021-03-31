@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe 'As a user' do
   before :each do
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(User.new)
     visit registration_path
   end
 

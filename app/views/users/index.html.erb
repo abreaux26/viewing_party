@@ -23,5 +23,29 @@
   </div>
   <div class="jumbotron" id="viewing-parties">
     <h3 class="display-4">Viewing Parties</h3>
+      <div class="hosting">
+        <% @user.events.each do |event|%>
+          <hr><%= link_to event.name, movie_path(event.api_movie_id)  %>
+          <p><%= event.start_time.strftime('%B %d, %Y %l:%M %p') %></p>
+          <p>Hosting</p>
+          <% event.friends.each do |friend| %>
+            <%= friend.username %><br>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="attending">
+        <% @invited.each do |invite|%>
+          <hr><%= link_to invite.event.name, movie_path(invite.event.api_movie_id) %>
+          <p><%= invite.event.start_time.strftime('%B %d, %Y %l:%M %p') %></p>
+          <p>Invited</p>
+          <% invite.event.friends.each do |friend| %>
+            <% if friend.username == @user.username %>
+              <b><%= friend.username%></b>
+            <% else %>
+              <p><%= friend.username %><p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 </body>
