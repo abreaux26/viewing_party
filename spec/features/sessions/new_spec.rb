@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe 'As a user' do
   before :each do
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(User.new)
     visit registration_path
   end
 
@@ -51,7 +50,7 @@ RSpec.describe 'As a user' do
       fill_in 'user[email]', with: 'user1@email.com'
       fill_in 'user[password]', with: 'password'
       fill_in 'user[password_confirmation]', with: 'password'
-      
+
       click_button('Register')
       expect(current_path).to eq(dashboard_path)
     end
