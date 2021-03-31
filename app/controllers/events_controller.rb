@@ -5,16 +5,16 @@ class EventsController < ApplicationController
   def new; end
 
   def create
-    unless incorrect_duration?
-      @event = current_user.events.create(event_params)
-      if @event.save
-        create_attendees
-        flash[:notice] = 'viewing party created!'
-        redirect_to dashboard_path
-      else
-        flash[:error] = "You must've forgot some information, try again!"
-        render :new
-      end
+    return if incorrect_duration?
+
+    @event = current_user.events.create(event_params)
+    if @event.save
+      create_attendees
+      email_friends
+      redirect_to dashboard_path
+    else
+      flash[:error] = "You must've forgot some information, try again!"
+      render :new
     end
   end
 
@@ -33,17 +33,32 @@ class EventsController < ApplicationController
   end
 
   def create_attendees
-    if params[:friends]
-      params[:friends].each do |friend|
-        Attendee.create(event_id: @event.id, friend_id: friend)
-      end
+    return unless params[:friends]
+
+    params[:friends].each do |friend|
+      Attendee.create(event_id: @event.id, friend_id: friend)
     end
   end
 
   def incorrect_duration?
-    if params[:duration].to_i < @movie[:runtime].to_i
-      flash[:error] = "Please enter a duration longer than #{@movie[:runtime]} minutes."
-      render :new
+    return unless params[:duration].to_i < @movie[:runtime].to_i
+
+    flash[:error] = "Please enter a duration longer than #{@movie[:runtime]} minutes."
+    render :new
+  end
+
+  def email_friends
+    @event.friends.each do |friend|
+      recipient = friend.email
+
+      email_info = {
+        user: current_user,
+        friend: friend.username,
+        message: @event.message
+      }
+
+      FriendNotifierMailer.inform(email_info, recipient).deliver_now
+      flash[:notice] = 'viewing party created!'
     end
   end
 end
