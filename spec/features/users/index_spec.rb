@@ -39,7 +39,8 @@ RSpec.describe 'user dashboard page', type: :feature do
   it 'shows viewing parties the user is hosting' do
     within(".hosting") do
       expect(page).to have_content(@event1.name)
-      expect(page).to have_content(@event1.start_time.strftime('%B %d, %Y%l:%M %p'))
+      expect(page).to have_content(@event1.start_time.strftime('%B %d, %Y'))
+      expect(page).to have_content(@event1.start_time.strftime('%l:%M %p'))
       expect(page).to have_content("Hosting")
       expect(page).to have_content(@user2.username)
       expect(page).to have_content(@user3.username)
@@ -49,7 +50,8 @@ RSpec.describe 'user dashboard page', type: :feature do
   it 'shows viewing parties the user is attending' do
     within(".attending") do
       expect(page).to have_content(@event2.name)
-      expect(page).to have_content(@event2.start_time.strftime('%B %d, %Y%l:%M %p'))
+      expect(page).to have_content(@event2.start_time.strftime('%B %d, %Y'))
+      expect(page).to have_content(@event2.start_time.strftime('%l:%M %p'))
       expect(page).to have_content("Invited")
       expect(page).to have_content(@user1.username)
       expect(page).to have_content(@user3.username)
