@@ -35,4 +35,11 @@ RSpec.describe 'As an authenticated user', type: :feature do
     click_button('Add Friend')
     expect(page).to have_content("User doesn't exist.")
   end
+
+  it 'you cannot add yourself as a friend' do
+    fill_in :friend, with: @user1.email
+    click_button('Add Friend')
+
+    expect(page).to have_content("Cannot add yourself as a friend.")
+  end
 end
