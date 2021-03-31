@@ -7,4 +7,8 @@ class Event < ApplicationRecord
   validates :duration, presence: true
   validates :start_time, presence: true
   validates :api_movie_id, presence: true
+
+  def message
+    "Event Details:\nName: #{name}\nDuration: #{duration}\nStart Time: #{start_time}"
+  end
 end
