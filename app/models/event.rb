@@ -9,6 +9,10 @@ class Event < ApplicationRecord
   validates :api_movie_id, presence: true
 
   def message
-    "Event Details:\nMovie: #{name}\nHost: #{host.username}\nDuration: #{duration}\nStart Time: #{start_time.strftime('%B %d, %Y %l:%M %p')}"
+    "Event Details:\n
+    Movie: #{name}\n
+    Host: #{host.username}\n
+    Duration: #{duration}\n
+    Start Time: #{start_time.strftime('%B %d, %Y %l:%M %p')}"
   end
 end
