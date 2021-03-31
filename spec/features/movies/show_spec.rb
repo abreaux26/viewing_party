@@ -16,12 +16,10 @@ RSpec.describe "When I visit the movies detail page", type: :feature do
       vote_average = find(".vote_average", match: :first).text
       click_on(movie_title)
 
-      # expect(current_path).to eq(movie_path(first(".movie").id))
-
       expect(page).to have_content(movie_title)
       expect(page).to have_content(vote_average)
-      # expect(page).to have_css(".runtime")
-      # expect(page).to have_css(".genres")
+      expect(page).to have_css(".runtime")
+      expect(page).to have_css(".genres")
       expect(page).to have_css(".summary")
       expect(page).to have_css(".casts")
       expect(page).to have_css(".reviews")
