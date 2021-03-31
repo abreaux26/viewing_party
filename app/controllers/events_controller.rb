@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def event_params
     params.permit(:name, :duration, :start_time, :api_movie_id)
   end
