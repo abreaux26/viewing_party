@@ -4,10 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    new_user = user_params
-    new_user[:username] = new_user[:username].downcase
-    new_user[:email] = new_user[:email].downcase
-    @user = User.create(new_user)
+    downcase_params(user_params)
+    @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
       redirect_to dashboard_path
@@ -21,5 +19,10 @@ class SessionsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def downcase_params(params)
+    params[:username].downcase!
+    params[:email].downcase!
   end
 end
