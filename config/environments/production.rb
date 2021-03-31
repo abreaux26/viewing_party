@@ -63,7 +63,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "viewing_party_#{Rails.env}"
 
-  # config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = { domain: 'https://powerful-cove-00403.herokuapp.com', address: "smtp.sendgrid.net", port: 587, authentication: :plain, user_name: 'apikey', password: ENV['SENDGRID_API_KEY'] }
