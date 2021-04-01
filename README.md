@@ -181,15 +181,6 @@ app/controllers/sessions_controller.rb:6:3: C: Metrics/MethodLength: Method has 
 
 ## Authors
 
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
-
-## Acknowledgments
-
-  - Hat tip to anyone whose code was used
-  - Inspiration
-  - etc
+  - [Trevor Suter](https://github.com/Trevorsuter)
+  - [Angel Breaux](https://github.com/abreaux26)
+  - [Trevor Robinson](https://github.com/Trevor-Robinson)
