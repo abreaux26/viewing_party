@@ -171,23 +171,38 @@ app/controllers/sessions_controller.rb:6:3: C: Metrics/MethodLength: Method has 
 3. `heroku run rails db:seed`
 
 ## API
+  There is currently one API being used in this application, [The Movie DB](https://www.themoviedb.org/?language=en-US). In order to consume this API and correctly use this application, you must follow these steps:
 
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
+  1. **Sign up for MovieDB**
+    - Go to the [MovieDB](https://www.themoviedb.org/?language=en-US) homepage and click *Join TMDb*.
+    - Set up a new account, confirm your email, and redirect your browser back to the homepage.
+  
+  2. Once you are logged in and on the homepage, access your profile settings.
+    - *You can do this by clicking the icon with your first initial on the top right of the screen(If you haven't set up a profile picture yet).*
+  
+  3. Navigate to the API tab within settings
+
+  4. Request a new API key and fill out the forms provided
+    - This might take 24 hours to process as the only one who can approve this key is the sight's true admin.
+  
+  5. Once you have your key, copy and paste your *Bearer Access Token* into a new `YML` file in the `config` folder of your application, along with an assigned variable.
+
+  6. Within your `application.rb` file in `config`, add this within the class `Application`:
+    `
+      config.before_configuration do
+      env_file = File.join(Rails.root, 'config', 'local_env.yml')
+      YAML.load(File.open(env_file)).each do |key, value|
+      ENV[key.to_s] = value
+      end if File.exists?(env_file)
+    end
+    `
+  7. Now, you have added the bearer token to your application! You are now open to accessing this API using your own designed service. If you would prefer to use the default service, please refer to the `movie_service.rb` file within `apps/services` to find the correct actions.
+    ```
+
+  8. You have successfully implemented the MovieDB API! To find the correct endpoints you would like to access, use [This URL](https://www.developers.themoviedb.org/).
 
 ## Authors
 
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
-
-## Acknowledgments
-
-  - Hat tip to anyone whose code was used
-  - Inspiration
-  - etc
+  - [Trevor Suter](https://github.com/Trevorsuter)
+  - [Angel Breaux](https://github.com/abreaux26)
+  - [Trevor Robinson](https://github.com/Trevor-Robinson)
