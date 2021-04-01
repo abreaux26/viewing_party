@@ -166,14 +166,14 @@ app/controllers/sessions_controller.rb:6:3: C: Metrics/MethodLength: Method has 
   5. Once you have your key, copy and paste your *Bearer Access Token* into a new `YML` file in the `config` folder of your application, along with an assigned variable.
 
   6. Within your `application.rb` file in `config`, add this within the class `Application`:
-    ```
+    `
       config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')
       YAML.load(File.open(env_file)).each do |key, value|
       ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
-
+    `
   7. Now, you have added the bearer token to your application! You are now open to accessing this API using your own designed service. If you would prefer to use the default service, please refer to the `movie_service.rb` file within `apps/services` to find the correct actions.
     ```
 
