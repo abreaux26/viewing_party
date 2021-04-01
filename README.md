@@ -1,29 +1,5 @@
 # Viewing Party
 
-This is the base repo for the [viewing party project](https://backend.turing.io/module3/projects/viewing_party) used for Turing's Backend Module 3.
-
-### About this Project
-
-
-
-## Local Setup
-
-1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
-
-
-## Versions
-
-- Ruby 2.5.3
-
-- Rails 5.2.4.3
-
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party/wireframes)
-
-
-# Viewing Party
-
 Viewing party is an application which allows users to search for popular movies, view details and reviews of movies and invite friends to a scheduled party to watch the movie. It consumes The MovieDB API (https://developers.themoviedb.org/) to provide reviews and up to date info about movies.
 
 Our database structure links users to friends and to viewing party events, with events being linked to a movie and other users who have been invited to attend that event.
